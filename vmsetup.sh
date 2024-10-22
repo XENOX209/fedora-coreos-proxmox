@@ -94,7 +94,7 @@ qm set ${TEMPLATE_VMID} --description "Fedora CoreOS
 
  - Version             : ${VERSION}
  - Cloud-init          : true
-
+ - Ignition            : ${TEMPLATE_IGNITION}
 Creation date : ${template_vmcreated}
 "
 
