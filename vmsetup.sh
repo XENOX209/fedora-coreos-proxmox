@@ -16,7 +16,7 @@ TEMPLATE_VMSTORAGE=${TEMPLATE_VMSTORAGE}
 SNIPPET_STORAGE=${SNIPPET_STORAGE}
 VMDISK_OPTIONS=${VMDISK_OPTIONS}
 
-TEMPLATE_IGNITION="fcos-base-tmplt.yaml"
+TEMPLATE_IGNITION=${TEMPLATE_IGNITION}
 
 # fcos version
 STREAMS=${STREAMS}
@@ -97,6 +97,9 @@ qm set ${TEMPLATE_VMID} --description "Fedora CoreOS
 
 Creation date : ${template_vmcreated}
 "
+
+# add virtual serial port 
+qm set ${TEMPLATE_VMID} -serial0 socket
 
 qm set ${TEMPLATE_VMID} --net0 virtio,bridge=vmbr0
 
